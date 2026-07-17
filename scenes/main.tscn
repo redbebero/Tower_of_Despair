@@ -1,0 +1,1247 @@
+[gd_scene format=3 uid="uid://c1vj8e5w3xt"]
+
+[ext_resource type="Script" uid="uid://dtsfy7hoh0sul" path="res://scripts/Main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://dbwbflc2bker8" path="res://scripts/GameMap.gd" id="2_gamemap"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_HpBackground"]
+bg_color = Color(0.12, 0.04, 0.05, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_HpFill"]
+bg_color = Color(0.906, 0.298, 0.235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_MpBackground"]
+bg_color = Color(0.04, 0.09, 0.16, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_MpFill"]
+bg_color = Color(0.204, 0.51, 0.835, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_ExpBackground"]
+bg_color = Color(0.05, 0.14, 0.08, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_ExpFill"]
+bg_color = Color(0.18, 0.8, 0.443, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_MonsterHpBackground"]
+bg_color = Color(0.16, 0.03, 0.03, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_MonsterHpFill"]
+bg_color = Color(0.753, 0.153, 0.153, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Main" type="Control" unique_id=1288121584]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2077789025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.0627451, 0.0901961, 1)
+
+[node name="LoginScreen" type="Panel" parent="." unique_id=612058979]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="LoginScreen" unique_id=1413116184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AuthBox" type="VBoxContainer" parent="LoginScreen/CenterContainer" unique_id=405372656]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="LoginScreen/CenterContainer/AuthBox" unique_id=1494121368]
+layout_mode = 2
+text = "🏰 절망의 탑 : 온라인"
+horizontal_alignment = 1
+
+[node name="AuthEmail" type="LineEdit" parent="LoginScreen/CenterContainer/AuthBox" unique_id=1287738672]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "이메일 (예: test@game.com)"
+alignment = 1
+
+[node name="AuthPassword" type="LineEdit" parent="LoginScreen/CenterContainer/AuthBox" unique_id=1544966180]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "비밀번호 (6자리 이상)"
+alignment = 1
+secret = true
+
+[node name="Buttons" type="HBoxContainer" parent="LoginScreen/CenterContainer/AuthBox" unique_id=1456343015]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BtnLogin" type="Button" parent="LoginScreen/CenterContainer/AuthBox/Buttons" unique_id=1492796562]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+text = "로그인"
+
+[node name="BtnSignUp" type="Button" parent="LoginScreen/CenterContainer/AuthBox/Buttons" unique_id=1710220052]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+text = "회원가입"
+
+[node name="AuthMsg" type="Label" parent="LoginScreen/CenterContainer/AuthBox" unique_id=1874986400]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="StartScreen" type="Panel" parent="." unique_id=1579879506]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="StartScreen" unique_id=1003718540]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="StartScreen/Center" unique_id=1284797055]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="StartScreen/Center/VBox" unique_id=1431335142]
+layout_mode = 2
+text = "⚔️ 캐릭터 선택 ⚔️"
+horizontal_alignment = 1
+
+[node name="JobSelectContainer" type="VBoxContainer" parent="StartScreen/Center/VBox" unique_id=482884740]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="GameContainer" type="VBoxContainer" parent="." unique_id=1332869127]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderBar" type="HBoxContainer" parent="GameContainer" unique_id=103478880]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="GameContainer/HeaderBar" unique_id=1976929525]
+layout_mode = 2
+text = "🏰 절망의 탑: 온라인"
+
+[node name="SaveStatus" type="Label" parent="GameContainer/HeaderBar" unique_id=534986580]
+unique_name_in_owner = true
+layout_mode = 2
+text = "💾 SAVED"
+
+[node name="TopCurrencyBar" type="HBoxContainer" parent="GameContainer" unique_id=808746487]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Gold" type="HBoxContainer" parent="GameContainer/TopCurrencyBar" unique_id=137238696]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/TopCurrencyBar/Gold" unique_id=1927311627]
+layout_mode = 2
+text = "💰 골드: "
+
+[node name="GoldLabel" type="Label" parent="GameContainer/TopCurrencyBar/Gold" unique_id=1296824029]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Soulstone" type="HBoxContainer" parent="GameContainer/TopCurrencyBar" unique_id=606340022]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/TopCurrencyBar/Soulstone" unique_id=6065854]
+layout_mode = 2
+text = "💎 영혼석: "
+
+[node name="SoulstoneLabel" type="Label" parent="GameContainer/TopCurrencyBar/Soulstone" unique_id=1837873083]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Enhance" type="HBoxContainer" parent="GameContainer/TopCurrencyBar" unique_id=1009480529]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/TopCurrencyBar/Enhance" unique_id=508108411]
+layout_mode = 2
+text = "⚙️ 강화석: "
+
+[node name="EnhanceLabel" type="Label" parent="GameContainer/TopCurrencyBar/Enhance" unique_id=705485901]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="MainLayout" type="HBoxContainer" parent="GameContainer" unique_id=939497417]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="LeftPanel" type="VBoxContainer" parent="GameContainer/MainLayout" unique_id=1673709269]
+custom_minimum_size = Vector2(290, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlayerPanel" type="PanelContainer" parent="GameContainer/MainLayout/LeftPanel" unique_id=982573519]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel" unique_id=591575]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="JobHeader" type="HBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox" unique_id=240627502]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerJob" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/JobHeader" unique_id=1370119068]
+unique_name_in_owner = true
+layout_mode = 2
+text = "직업"
+
+[node name="PlayerLevel" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/JobHeader" unique_id=1067817377]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="HpBar" type="ProgressBar" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox" unique_id=1468933005]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBox_HpBackground")
+theme_override_styles/fill = SubResource("StyleBox_HpFill")
+show_percentage = false
+
+[node name="Text" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/HpBar" unique_id=1343077180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 0"
+horizontal_alignment = 1
+
+[node name="MpBar" type="ProgressBar" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox" unique_id=1524209635]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBox_MpBackground")
+theme_override_styles/fill = SubResource("StyleBox_MpFill")
+show_percentage = false
+
+[node name="Text" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/MpBar" unique_id=1677161968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 0"
+horizontal_alignment = 1
+
+[node name="ExpBar" type="ProgressBar" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox" unique_id=42931912]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBox_ExpBackground")
+theme_override_styles/fill = SubResource("StyleBox_ExpFill")
+show_percentage = false
+
+[node name="Text" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/ExpBar" unique_id=1424499508]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 0"
+horizontal_alignment = 1
+
+[node name="CpBox" type="HBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox" unique_id=415879093]
+layout_mode = 2
+alignment = 1
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/CpBox" unique_id=228393931]
+layout_mode = 2
+text = "💥 전투력(CP): "
+
+[node name="PlayerCp" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/CpBox" unique_id=331764558]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="StatsGrid" type="GridContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox" unique_id=413817067]
+layout_mode = 2
+columns = 2
+
+[node name="Atk" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=459374519]
+layout_mode = 2
+text = "⚔️ 공격력: "
+
+[node name="PlayerAtk" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=1615615707]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Def" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=184414417]
+layout_mode = 2
+text = "🛡️ 방어력: "
+
+[node name="PlayerDef" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=105960130]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Speed" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=576670642]
+layout_mode = 2
+text = "⚡ 속도: "
+
+[node name="PlayerSpeed" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=39905870]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Combo" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=1320549292]
+layout_mode = 2
+text = "🌪️ 연속 타격: "
+
+[node name="PlayerCombo" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=825472819]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0%"
+
+[node name="Crit" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=1836203188]
+layout_mode = 2
+text = "🎯 치명 확률: "
+
+[node name="PlayerCrit" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=48036806]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0%"
+
+[node name="Evade" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=510180335]
+layout_mode = 2
+text = "💨 회피 확률: "
+
+[node name="PlayerEvade" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/StatsGrid" unique_id=359027876]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0%"
+
+[node name="EquipDetails" type="VBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox" unique_id=1062239804]
+layout_mode = 2
+
+[node name="Weapon" type="HBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails" unique_id=1636417293]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Weapon" unique_id=980856935]
+layout_mode = 2
+text = "무기: "
+
+[node name="PlayerWeapon" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Weapon" unique_id=479892685]
+unique_name_in_owner = true
+layout_mode = 2
+text = "맨주먹"
+
+[node name="Armor" type="HBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails" unique_id=1652731925]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Armor" unique_id=276329803]
+layout_mode = 2
+text = "방어: "
+
+[node name="PlayerArmor" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Armor" unique_id=1661952031]
+unique_name_in_owner = true
+layout_mode = 2
+text = "평상복"
+
+[node name="Relic" type="HBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails" unique_id=1207708982]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Relic" unique_id=74953068]
+layout_mode = 2
+text = "반지: 고대 유물 "
+
+[node name="PlayerRelic" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Relic" unique_id=1844419518]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+0강"
+
+[node name="Pet" type="HBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails" unique_id=1086937501]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Pet" unique_id=196987106]
+layout_mode = 2
+text = "동료: "
+
+[node name="PlayerPet" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Pet" unique_id=970335824]
+unique_name_in_owner = true
+layout_mode = 2
+text = "없음"
+
+[node name="Merc" type="HBoxContainer" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails" unique_id=1089321946]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Merc" unique_id=1532097147]
+layout_mode = 2
+text = "용병: "
+
+[node name="MercBuff" type="Label" parent="GameContainer/MainLayout/LeftPanel/PlayerPanel/VBox/EquipDetails/Merc" unique_id=735544684]
+unique_name_in_owner = true
+layout_mode = 2
+text = "미고용"
+
+[node name="InventoryPanel" type="PanelContainer" parent="GameContainer/MainLayout/LeftPanel" unique_id=1475696971]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="GameContainer/MainLayout/LeftPanel/InventoryPanel" unique_id=1936371457]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/LeftPanel/InventoryPanel/VBox" unique_id=1215787233]
+layout_mode = 2
+text = "🎒 배낭 (인벤토리)"
+
+[node name="InventoryScroll" type="ScrollContainer" parent="GameContainer/MainLayout/LeftPanel/InventoryPanel/VBox" unique_id=362814737]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InventoryGrid" type="GridContainer" parent="GameContainer/MainLayout/LeftPanel/InventoryPanel/VBox/InventoryScroll" unique_id=308666573]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 4
+
+[node name="CenterPanel" type="VBoxContainer" parent="GameContainer/MainLayout" unique_id=1697039383]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MapTitle" type="Label" parent="GameContainer/MainLayout/CenterPanel" unique_id=24368273]
+unique_name_in_owner = true
+layout_mode = 2
+text = "🗺️ 마을 광장"
+horizontal_alignment = 1
+
+[node name="MapBorder" type="PanelContainer" parent="GameContainer/MainLayout/CenterPanel" unique_id=1150050326]
+custom_minimum_size = Vector2(440, 440)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GameMap" type="Control" parent="GameContainer/MainLayout/CenterPanel/MapBorder" unique_id=231453239]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("2_gamemap")
+
+[node name="Dpad" type="GridContainer" parent="GameContainer/MainLayout/CenterPanel" unique_id=41416597]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 3
+
+[node name="Dummy1" type="Control" parent="GameContainer/MainLayout/CenterPanel/Dpad" unique_id=578534961]
+layout_mode = 2
+
+[node name="BtnUp" type="Button" parent="GameContainer/MainLayout/CenterPanel/Dpad" unique_id=1075048121]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 2
+text = "▲"
+
+[node name="Dummy2" type="Control" parent="GameContainer/MainLayout/CenterPanel/Dpad" unique_id=213761223]
+layout_mode = 2
+
+[node name="BtnLeft" type="Button" parent="GameContainer/MainLayout/CenterPanel/Dpad" unique_id=752771313]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 2
+text = "◀"
+
+[node name="BtnDown" type="Button" parent="GameContainer/MainLayout/CenterPanel/Dpad" unique_id=2045770657]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 2
+text = "▼"
+
+[node name="BtnRight" type="Button" parent="GameContainer/MainLayout/CenterPanel/Dpad" unique_id=1997589553]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 2
+text = "▶"
+
+[node name="LogWindow" type="RichTextLabel" parent="GameContainer/MainLayout/CenterPanel" unique_id=776870301]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+bbcode_enabled = true
+scroll_following = true
+
+[node name="RightPanel" type="VBoxContainer" parent="GameContainer/MainLayout" unique_id=2137623381]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="ActionTabs" type="PanelContainer" parent="GameContainer/MainLayout/RightPanel" unique_id=737303536]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MapActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1379497106]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions" unique_id=388258734]
+layout_mode = 2
+text = "탐험 모드"
+horizontal_alignment = 1
+
+[node name="Tip" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions" unique_id=1969759392]
+layout_mode = 2
+text = "건물이나 캐릭터 주변으로 다가가면
+메뉴가 자동으로 열립니다!"
+horizontal_alignment = 1
+
+[node name="BuffPanel" type="PanelContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions" unique_id=1643101881]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions/BuffPanel" unique_id=1393074898]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions/BuffPanel/VBox" unique_id=1460379121]
+layout_mode = 2
+text = "✨ 패시브 & 버프"
+
+[node name="Details" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions/BuffPanel/VBox" unique_id=484543057]
+layout_mode = 2
+text = "• 도감 수집 보너스: 올스탯 +0%
+• 환생 전승 스탯: HP+0 / 공+0 / 방+0"
+
+[node name="HBox" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions" unique_id=1561186557]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BtnCharSelect" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions/HBox" unique_id=1245928204]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "캐릭터 변경"
+
+[node name="BtnLogout" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions/HBox" unique_id=1183920927]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "로그아웃"
+
+[node name="RankingActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1941929342]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RankingActions" unique_id=330326273]
+layout_mode = 2
+text = "🏆 명예의 전당 (서버 랭킹)"
+
+[node name="BtnRefreshRanking" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RankingActions" unique_id=1534810506]
+layout_mode = 2
+text = "🔄 랭킹 갱신"
+
+[node name="RankingScroll" type="ScrollContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RankingActions" unique_id=360246342]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RankingList" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RankingActions/RankingScroll" unique_id=1208854637]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PvPActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=240684089]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/PvPActions" unique_id=1245994913]
+layout_mode = 2
+text = "⚔️ 피의 결투장"
+
+[node name="Desc" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/PvPActions" unique_id=203580302]
+layout_mode = 2
+text = "랭킹에 등록된 다른 유저와 결투를 벌입니다."
+
+[node name="BtnFindPvp" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/PvPActions" unique_id=286052992]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "결투 상대 찾기"
+
+[node name="GreenhouseActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=810429135]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/GreenhouseActions" unique_id=1482893339]
+layout_mode = 2
+text = "🌱 신비한 마력 온실"
+
+[node name="SeedCountBox" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/GreenhouseActions" unique_id=1803149868]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/GreenhouseActions/SeedCountBox" unique_id=1210044832]
+layout_mode = 2
+text = "보유 중인 씨앗: "
+
+[node name="SeedCountLabel" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/GreenhouseActions/SeedCountBox" unique_id=896245312]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="GreenhousePots" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/GreenhouseActions" unique_id=584402127]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MuseumActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=2082085712]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions" unique_id=1763075159]
+layout_mode = 2
+text = "🏛️ 몬스터 도감"
+
+[node name="Stats" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions" unique_id=1293885008]
+layout_mode = 2
+
+[node name="Collected" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions/Stats" unique_id=1997190764]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions/Stats/Collected" unique_id=844644651]
+layout_mode = 2
+text = "수집된 종류: "
+
+[node name="DexCollected" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions/Stats/Collected" unique_id=1734881418]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Bonus" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions/Stats" unique_id=776932322]
+layout_mode = 2
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions/Stats/Bonus" unique_id=1780011639]
+layout_mode = 2
+text = "스탯 증폭 보너스: +"
+
+[node name="DexBonus" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions/Stats/Bonus" unique_id=1175772902]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Pct" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions/Stats/Bonus" unique_id=858498674]
+layout_mode = 2
+text = "%"
+
+[node name="DexScroll" type="ScrollContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions" unique_id=898903443]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DexList" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/MuseumActions/DexScroll" unique_id=837445355]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TowerEntranceActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=248350263]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/TowerEntranceActions" unique_id=367833489]
+layout_mode = 2
+text = "🏰 절망의 탑 입구"
+
+[node name="FloorSelect" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/TowerEntranceActions" unique_id=877608961]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnPrevFloor" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/TowerEntranceActions/FloorSelect" unique_id=1959487286]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "◀"
+
+[node name="TargetFloorLabel" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/TowerEntranceActions/FloorSelect" unique_id=1709640645]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1 / 1층"
+horizontal_alignment = 1
+
+[node name="BtnNextFloor" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/TowerEntranceActions/FloorSelect" unique_id=323924219]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "▶"
+
+[node name="BtnEnterTower" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/TowerEntranceActions" unique_id=1559693442]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+text = "🚀 1층 진입하기"
+
+[node name="CombatActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1960278831]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MonsterPanel" type="PanelContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions" unique_id=1225644974]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel" unique_id=1827212776]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Header" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox" unique_id=763219650]
+layout_mode = 2
+alignment = 1
+
+[node name="MonsterFloor" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/Header" unique_id=224139302]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1층"
+
+[node name="MonsterName" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/Header" unique_id=448979861]
+unique_name_in_owner = true
+layout_mode = 2
+text = "몬스터"
+
+[node name="MonsterTrait" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox" unique_id=1150728657]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="MonsterHpBar" type="ProgressBar" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox" unique_id=774253217]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBox_MonsterHpBackground")
+theme_override_styles/fill = SubResource("StyleBox_MonsterHpFill")
+show_percentage = false
+
+[node name="Text" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/MonsterHpBar" unique_id=1789707746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 0"
+horizontal_alignment = 1
+
+[node name="Stats" type="GridContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox" unique_id=321652619]
+layout_mode = 2
+columns = 2
+
+[node name="Atk" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/Stats" unique_id=92906085]
+layout_mode = 2
+text = "⚔️ 공: "
+
+[node name="MonsterAtk" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/Stats" unique_id=1938019111]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Def" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/Stats" unique_id=728938210]
+layout_mode = 2
+text = "🛡️ 방: "
+
+[node name="MonsterDef" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/Stats" unique_id=447444062]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Speed" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/Stats" unique_id=1209234465]
+layout_mode = 2
+text = "⚡ 속도: "
+
+[node name="MonsterSpeed" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/MonsterPanel/VBox/Stats" unique_id=821662657]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="ActionGrid" type="GridContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions" unique_id=2120187198]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="BtnAttack" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/ActionGrid" unique_id=189066748]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "⚔️ 기본 공격"
+
+[node name="BtnSkill" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/ActionGrid" unique_id=1172458574]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🔥 스킬"
+
+[node name="BtnUsePotion" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/ActionGrid" unique_id=1588866881]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🧪 포션 사용"
+
+[node name="BtnRun" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/CombatActions/ActionGrid" unique_id=1227538010]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🏃 도망치기"
+
+[node name="ShopActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=653080852]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions" unique_id=1729504713]
+layout_mode = 2
+text = "🏪 잡화 상점"
+
+[node name="Consumables" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions" unique_id=642710210]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BtnBuyPotion" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/Consumables" unique_id=52672776]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🧪 포션 (50G)"
+
+[node name="BtnBuyScroll" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/Consumables" unique_id=1521907574]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "📜 파방 (2천G)"
+
+[node name="ShopScroll" type="ScrollContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions" unique_id=1092934541]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopItemsList" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/ShopScroll" unique_id=1308090342]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RowSell" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions" unique_id=1545256877]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BtnSellLoot" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/RowSell" unique_id=395417795]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "💰 전리품 모두 팔기"
+
+[node name="BtnHireMerc" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/RowSell" unique_id=1013949811]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🤝 용병 고용 (2천G)"
+
+[node name="InnActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1267996795]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/InnActions" unique_id=539043921]
+layout_mode = 2
+text = "🛏️ 여관"
+
+[node name="BtnRest" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/InnActions" unique_id=47136896]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+text = "휴식하기"
+
+[node name="BlacksmithActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1851414943]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlacksmithActions" unique_id=722114182]
+layout_mode = 2
+text = "🔨 대장간"
+
+[node name="Warn" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlacksmithActions" unique_id=1519618651]
+layout_mode = 2
+text = "+10강 이상 실패 시 무기가 파괴될 수 있습니다."
+
+[node name="UseScrollCheckbox" type="CheckBox" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlacksmithActions" unique_id=825605039]
+unique_name_in_owner = true
+layout_mode = 2
+text = "파방 주문서 사용"
+
+[node name="BtnEnhanceWeapon" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlacksmithActions" unique_id=1209777486]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+text = "무기 강화 (200G + 강화석1)"
+
+[node name="NpcActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1976705584]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions" unique_id=1020682904]
+layout_mode = 2
+text = "👴 촌장 (종합 관리)"
+
+[node name="BtnPromoteChoice" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions" unique_id=820450044]
+layout_mode = 2
+text = "⭐ 전직소"
+
+[node name="JobChoicesContainer" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions" unique_id=1605149811]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BtnResetJob" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/JobChoicesContainer" unique_id=1390612663]
+layout_mode = 2
+text = "🔄 1차 직업 초기화"
+
+[node name="BtnPetGacha" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions" unique_id=2088072747]
+layout_mode = 2
+text = "🐾 펫 부화 (1000G)"
+
+[node name="BtnReincarnationMenu" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions" unique_id=1391928475]
+layout_mode = 2
+text = "🔮 환생 및 영혼 관리"
+
+[node name="ReincControls" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions" unique_id=1624699521]
+layout_mode = 2
+
+[node name="BtnReinc" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/ReincControls" unique_id=1303643846]
+layout_mode = 2
+text = "🌀 환생 (20층 이상)"
+
+[node name="SoulUpgrades" type="GridContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/ReincControls" unique_id=723412553]
+layout_mode = 2
+columns = 2
+
+[node name="BtnUpgradeSoulAtk" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/ReincControls/SoulUpgrades" unique_id=87049545]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "공+5 (10개)"
+
+[node name="BtnUpgradeSoulDef" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/ReincControls/SoulUpgrades" unique_id=148376943]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "방+5 (10개)"
+
+[node name="BtnUpgradeSoulHp" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/ReincControls/SoulUpgrades" unique_id=1455080689]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "최대체력+50 (10개)"
+
+[node name="RiftActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1735376574]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions" unique_id=675195208]
+layout_mode = 2
+text = "🌌 차원의 틈"
+
+[node name="Cooldown" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions" unique_id=1496782673]
+layout_mode = 2
+text = "마룡 토벌 쿨타임 (5분)"
+horizontal_alignment = 1
+
+[node name="RaidCooldownText" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions" unique_id=1666032587]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="BtnRaidEnter" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions" unique_id=107553491]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "🐉 마룡 토벌전"
+
+[node name="RelicHeader" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions" unique_id=882553300]
+layout_mode = 2
+text = "🔮 유물 강화"
+
+[node name="BtnRelicUpgrade" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions" unique_id=77074224]
+layout_mode = 2
+text = "⚡ 스탯 누적"
+
+[node name="BtnAwakeAttempt" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions" unique_id=937447935]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+text = "🩸 피의 제단 (각성 1.5%)"
+
+[node name="ArenaActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1599987009]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ArenaActions" unique_id=633701468]
+layout_mode = 2
+text = "🏟️ 지하 투기장"
+
+[node name="Desc" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ArenaActions" unique_id=56507694]
+layout_mode = 2
+text = "끝없이 몰려오는 적을 쓰러뜨리고 영혼석을 획득하세요!"
+
+[node name="BtnEnterArena" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/ArenaActions" unique_id=1583771324]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+text = "무한 방어전 입장 (1,000G)"
+
+[node name="FishingActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=161773223]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/FishingActions" unique_id=938555512]
+layout_mode = 2
+text = "🎣 신비한 낚시터"
+
+[node name="Desc" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/FishingActions" unique_id=1174607151]
+layout_mode = 2
+text = "MP를 소모해 낚시를 합니다."
+
+[node name="BtnFish" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/FishingActions" unique_id=390274567]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+text = "찌 던지기 (-10 MP)"
+
+[node name="BlackmarketActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=2009710717]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlackmarketActions" unique_id=2094414911]
+layout_mode = 2
+text = "⛺ 떠돌이 암시장"
+
+[node name="Options" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlackmarketActions" unique_id=236315126]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BtnExStone" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlackmarketActions/Options" unique_id=1439061258]
+layout_mode = 2
+text = "강화석 5개 교환 (영혼석 1개)"
+
+[node name="BtnExScroll" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlackmarketActions/Options" unique_id=911982951]
+layout_mode = 2
+text = "파방 주문서 2장 교환 (영혼석 1개)"
+
+[node name="BtnExPotion" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlackmarketActions/Options" unique_id=1819206725]
+layout_mode = 2
+text = "최고급 포션 10개 (영혼석 1개)"
+
+[node name="BtnExCard" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/BlackmarketActions/Options" unique_id=1656788399]
+layout_mode = 2
+text = "📜 랜덤 도감 카드팩 (영혼석 2개)"
+
+[node name="RuinsActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1077270101]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RuinsActions" unique_id=1867078363]
+layout_mode = 2
+text = "⛏️ 잊혀진 지하 유적"
+
+[node name="BtnRuinsBuy" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RuinsActions" unique_id=1482151950]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+text = "탐사 키트 구매 (1,000G)"
+
+[node name="RuinsMsg" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RuinsActions" unique_id=908822710]
+unique_name_in_owner = true
+layout_mode = 2
+text = "탐사 키트를 구매해주세요."
+horizontal_alignment = 1
+
+[node name="RuinsGrid" type="GridContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs/RuinsActions" unique_id=472327146]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
+
+[node name="GameoverActions" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/ActionTabs" unique_id=1160864661]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/ActionTabs/GameoverActions" unique_id=661635368]
+layout_mode = 2
+text = "💀 게임 오버"
+horizontal_alignment = 1
+
+[node name="BtnRevive" type="Button" parent="GameContainer/MainLayout/RightPanel/ActionTabs/GameoverActions" unique_id=276344357]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+text = "✨ 마을에서 부활 (골드 10% 감소)"
+
+[node name="QuestPanel" type="PanelContainer" parent="GameContainer/MainLayout/RightPanel" unique_id=1554971065]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/QuestPanel" unique_id=214606547]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox" unique_id=1876482129]
+layout_mode = 2
+text = "📜 일일 의뢰 & 업적"
+
+[node name="QuestKill" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox" unique_id=173317340]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestKill" unique_id=513704666]
+layout_mode = 2
+alignment = 1
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestKill/Header" unique_id=1132439465]
+layout_mode = 2
+text = "⚔️ 몬스터 토벌"
+
+[node name="QuestKillProgress" type="Label" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestKill/Header" unique_id=260347960]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0 / 20"
+
+[node name="QuestKillBar" type="ProgressBar" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestKill" unique_id=201683681]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+show_percentage = false
+
+[node name="QuestFloor" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox" unique_id=1964851380]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestFloor" unique_id=998015058]
+layout_mode = 2
+alignment = 1
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestFloor/Header" unique_id=1791326259]
+layout_mode = 2
+text = "🧗 탑 개척 (최고층)"
+
+[node name="QuestFloorProgress" type="Label" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestFloor/Header" unique_id=172492720]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1 / 50"
+
+[node name="QuestFloorBar" type="ProgressBar" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestFloor" unique_id=1048198333]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+show_percentage = false
+
+[node name="QuestGold" type="VBoxContainer" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox" unique_id=1955567288]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestGold" unique_id=1459840336]
+layout_mode = 2
+alignment = 1
+
+[node name="Lbl" type="Label" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestGold/Header" unique_id=360783326]
+layout_mode = 2
+text = "💰 재력가 (보유 골드)"
+
+[node name="QuestGoldProgress" type="Label" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestGold/Header" unique_id=292822329]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0 / 100K"
+
+[node name="QuestGoldBar" type="ProgressBar" parent="GameContainer/MainLayout/RightPanel/QuestPanel/VBox/QuestGold" unique_id=998968894]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+show_percentage = false
+
+[connection signal="pressed" from="LoginScreen/CenterContainer/AuthBox/Buttons/BtnLogin" to="." method="handle_login"]
+[connection signal="pressed" from="LoginScreen/CenterContainer/AuthBox/Buttons/BtnSignUp" to="." method="handle_signup"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions/HBox/BtnCharSelect" to="." method="back_to_char_select"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/MapActions/HBox/BtnLogout" to="." method="logout"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/RankingActions/BtnRefreshRanking" to="." method="load_rankings"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/TowerEntranceActions/BtnEnterTower" to="." method="enter_tower"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/Consumables/BtnBuyPotion" to="." method="buy_potion"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/Consumables/BtnBuyScroll" to="." method="buy_scroll"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/RowSell/BtnSellLoot" to="." method="sell_loot"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/ShopActions/RowSell/BtnHireMerc" to="." method="hire_mercenary"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/InnActions/BtnRest" to="." method="rest"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/BlacksmithActions/BtnEnhanceWeapon" to="." method="enhance_weapon"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/JobChoicesContainer/BtnResetJob" to="." method="reset_job_tier"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/BtnPetGacha" to="." method="draw_pet"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/NpcActions/ReincControls/BtnReinc" to="." method="reincarnate"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions/BtnRelicUpgrade" to="." method="upgrade_relic"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/RiftActions/BtnAwakeAttempt" to="." method="attempt_awakening"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/FishingActions/BtnFish" to="." method="do_fishing"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/RuinsActions/BtnRuinsBuy" to="." method="buy_exploration_kit"]
+[connection signal="pressed" from="GameContainer/MainLayout/RightPanel/ActionTabs/GameoverActions/BtnRevive" to="." method="revive"]
