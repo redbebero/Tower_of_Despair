@@ -389,8 +389,6 @@ func win_combat():
 func drop_card(monster_name: String):
 	var player = PlayerData.player
 	var base_name = monster_name.replace("[5W] ", "").replace("투기장 ", "").replace("💀 ", "").replace("👑 ", "")
-	if not player.has("cards"):
-		player.cards = {}
 	if not player.cards.has(base_name):
 		player.cards[base_name] = 1
 		log_message.emit("<b><span style='color:#00ffff;'>[도감] 새로운 카드 획득! : %s</span></b>" % base_name)
