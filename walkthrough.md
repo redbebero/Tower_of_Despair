@@ -7,7 +7,7 @@
 ### 1. Autoload 싱글톤 레이어
 - **[Database.gd](file:///home/redbebero/work/projects/game/Godot/절망의-/scripts/Database.gd)**: 직업 스탯, 펫 DB, 장비 DB, 몬스터 특성, 일반/보스 몬스터 등 하드코딩 데이터를 분리 관리하여 향후 확장성이 대폭 향상되었습니다.
 - **[PlayerData.gd](file:///home/redbebero/work/projects/game/Godot/절망의-/scripts/PlayerData.gd)**: 플레이어의 레벨, 경험치, 스탯 계산(유물/카드/장비/환생 보너스 적용)을 정교하게 실시간 처리합니다.
-- **[SaveManager.gd](file:///home/redbebero/work/projects/game/Godot/절망의-/scripts/SaveManager.gd)**: 로컬 파일(`user://save_data.json`) 및 명예의 전당(`user://leaderboard.json`) 데이터를 JSON 직렬화하여 영구 보존합니다.
+- **[SaveManager.gd](file:///home/redbebero/work/projects/game/Godot/절망의-/scripts/SaveManager.gd)**: Firebase Email/Password Auth와 Realtime Database를 통해 인증, 캐릭터 저장, 명예의 전당 데이터를 원격으로 관리합니다.
 - **[CombatManager.gd](file:///home/redbebero/work/projects/game/Godot/절망의-/scripts/CombatManager.gd)**: 턴제 전투 로직(일반, 보스, 무한 투기장, 비동기 PvP 결투장, 10턴 마룡 레이드)을 완전히 포팅했습니다.
 
 ### 2. 맵 & 이동 엔진
