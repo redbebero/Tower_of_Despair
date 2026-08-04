@@ -2,3 +2,8 @@
 .godot/
 /android/
 .aider*
+
+# Local planning notes
+/docs/superpowers/plans/
+/implementation_plan.md
+/task.md
